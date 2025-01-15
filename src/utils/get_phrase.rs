@@ -8,8 +8,13 @@ struct Phrase {
     phrase: String,
 }
 
-pub fn read_json() {
+fn read_json() -> Result<Vec<Phrase>, serde_json::Error> {
     let json = std::fs::read_to_string("./phrases.json").unwrap();
     let phrases = from_str::<Vec<Phrase>>(&json);
-    println!("{:#?}", phrases);
+    phrases
+}
+
+pub fn get_new_phrase() {
+    let json = read_json();
+    println!("{:#?}", json)
 }
