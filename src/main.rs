@@ -1,7 +1,10 @@
-use utils::get_phrase;
+//use utils::display;
+use utils::get_keyboard_input;
 
 mod utils;
 
 fn main() {
-    get_phrase::get_new_phrase()
+    //display::create_display();
+
+    get_keyboard_input::get_keyboard_input();
 }
